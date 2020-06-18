@@ -123,8 +123,8 @@ class Auth extends CI_Controller {
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_port' => '465',
-            'smtp_user' => 'faqihakih12@gmail.com',
-            'smtp_pass' => 'faqihakih',
+            'smtp_user' => 'AkihDev12@gmail.com',
+            'smtp_pass' => 'Akih2400',
             'mailtype'  => 'html',
             'starttls'  => true,
             'charset' => 'utf-8',
@@ -134,7 +134,7 @@ class Auth extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->initialize($config);
 
-        $this->email->from('faqihakih12@gmail.com', 'Akih Company');
+        $this->email->from('AkihDev12@gmail.com', 'Akih Company');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {
@@ -248,12 +248,12 @@ class Auth extends CI_Controller {
                 $this->_sendEmail($token, 'forgot');
                 
 
-                $this->session->set_flashdata('messege','<div           class="alert alert-success" role="alert">
+                $this->session->set_flashdata('messege','<div class="alert alert-success" role="alert">
                 Please check your email to reset your password!
                 </div>');
                 redirect('auth/forgotpassword');
             }else{
-                $this->session->set_flashdata('messege','<div           class="alert alert-danger" role="alert">
+                $this->session->set_flashdata('messege','<div class="alert alert-danger" role="alert">
                 Email is not registered or activeted!
                 </div>');
                 redirect('auth/forgotpassword');
